@@ -1,0 +1,11 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "OMF is the third project of the Web Developer training by OpenClassrooms. This project involves making the integration of a online food ordering platform called Ohmyfood. You can access the page via the following link :",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

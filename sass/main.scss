@@ -1,0 +1,281 @@
+@font-face {
+    font-family: 'Shrikhand';
+    src: url("../fonts/shrikhand/Shrikhand-Regular.ttf");
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Thin.ttf");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Light.ttf");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Medium.ttf");
+    font-style:normal;
+    font-weight:500;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Bold.ttf");
+    font-style:normal;
+    font-weight:bold;
+}
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);;
+}
+
+body {
+    font-family:  'Roboto',Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 1.0em;
+    display: flex;
+    justify-content: center;
+    &.background-color {
+        background-color: grey;
+    } 
+}
+.page {
+    max-width: 768px;/*Tablet's screenwidth*/
+    min-width: 320px; 
+    background-color: white
+}
+h1 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+/*Header*/
+header {
+    display: flex;
+    justify-content: center;
+
+    .logo {
+        width: 166px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+}
+ /* Search */
+.search {
+    display: flex;
+    justify-content: center;
+    height: 45px;    
+    
+    background-color: #e0e0e0;
+    & .location {
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        & .fas {
+            width: 33.3%;
+            display: flex;
+            justify-content: flex-end;
+        }   
+        & span {
+            width: 33.3%;
+            font-weight: norm;
+        }              
+    }
+}
+
+/*Présentation*/
+.presentation {
+    display:block;
+    text-align: center;
+    padding: 30px 30px 30px 30px;
+    
+    background-color: #F5F5F5;
+    & h1 {
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+    & p {
+        font-size: 1.1em;
+        font-weight: 100;
+        padding-bottom: 30px;
+    }
+    & .btn-explorer {
+        padding: 20px 20px;
+        color: white;
+        background: linear-gradient(0.48turn,#FF79DA,#9356DC);
+        border-radius: 40px;
+    }
+}
+
+/* Steps */
+.steps {
+    display:block;
+    padding: 30px 30px 30px 30px;
+    
+    & h2 {
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+    & .step {
+        margin-top: 18px;
+        margin-bottom: 18px;
+        display: flex;
+
+        padding: 25px 25px;
+        background: #F5F5F5;
+        border-radius: 15px;
+        box-shadow: 5px 3px 15px -10px rgb(0 0 0 / 62%);
+
+        position: relative;
+        left:5px;
+
+        &__number{
+            background-color: #9356DC;
+            color: white;
+            font-size: .8em;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: -10px;
+        }
+        &__icon {
+            margin-left: 10px;
+            margin-right: 20px;
+            color: grey;
+            &--purple {
+                color: #9356DC;
+            } 
+        }
+        &__name {
+            font-weight: 500;
+        }
+        &--purple {
+            background-color: #e9d7ff;
+        }
+    }
+}
+/* Restaurants*/
+.restaurants {
+    display:block;
+    padding: 30px 30px 30px 30px;
+    background-color: #F5F5F5;
+    & h2 {
+        font-size: 1.4em;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+    .restaurant {
+        height: 250px;
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 5px 3px 15px -10px rgb(0 0 0 / 62%);
+        background-color: white;
+        overflow:hidden;
+        margin-bottom: 20px;
+        &__image {
+            height: 68%;
+            overflow:hidden;
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .badge-new {
+                position: absolute;
+                z-index: 1;
+                top: 1rem;
+                right: 1rem;
+                padding: 0.375rem 0.5rem;
+
+                background-color: #99E2D0;
+                border-radius: 3px;
+                color: green;
+            }
+        }
+        &__info {
+            padding: 10px;
+            width: 100%;
+            height: 32%;
+            box-sizing: border-box;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            position: relative;
+            h3 {
+                font-weight: bold;
+                font-size: 1em;
+                margin: 5px;
+            }
+            span {
+                font-weight: 300;
+                margin: 5px;
+            }
+            .fa-heart {
+                font-size: 1.8em;
+                position: absolute;
+                right: 25px;
+                transition:   border-color 2s, font-weight 2s, transform 2s ;
+                &:hover{
+                    font-weight: bold;
+                    
+                    background: -webkit-linear-gradient(#9356DC, #FF79DA);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+            
+        }
+    }
+}
+/* Footer */
+footer{
+    display:block;
+    padding: 30px 30px 30px 30px;
+    background-color: black;
+    color: white;
+    
+    & h2 {
+        font-family: 'Shrikhand';
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    li {
+        margin-bottom: 15px;
+        a {
+            color: white;
+            i {
+                margin-right: 5px;
+                width: 20px;
+            }
+            &:hover {
+                text-decoration:underline;
+            }
+        }
+    }
+}
