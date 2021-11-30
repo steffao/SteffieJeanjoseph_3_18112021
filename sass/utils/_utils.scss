@@ -1,0 +1,125 @@
+/* colors */
+$primary-clr : #9356DC;
+$secondary-clr : #FF79DA;
+$tertiary-clr : #99E2D0;
+$dark-grey :  #e0e0e0;
+$light-grey : #F5F5F5;
+
+/* keyframes*/
+/* /Loader-page */
+@keyframes loaderpage { /*Loading Page opacity*/
+    0%{
+        opacity:1;
+        z-index: 2;
+    }
+    75%{
+        opacity:1;
+        z-index: 2;
+    }
+    100%{
+        opacity : 0;
+        z-index: 2;
+    }
+}
+@keyframes move-title { /* Loadspinner title moving down */
+    0% {
+        transform : scale(0.8);
+        color: $secondary-clr;
+        padding-top: 0;
+
+    }
+    50% {
+        transform : scale(0.8);
+        color: $primary-clr;
+        padding-top: 0;
+
+    }
+    
+    100% {
+        transform : scale(1);
+        padding-top: 3em;
+    } 
+}
+@keyframes loadspinner { /* Loadspinner circles animation */
+    0% {
+        background-color: $dark-grey;
+        transform: scale(1.0);
+        opacity: 1;
+    }
+    25% {
+        background-color: $secondary-clr;
+        transform : scale(1.1);
+        opacity: 1;
+
+    }
+    75% {
+        background-color: $primary-clr;
+        transform : scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        background-color: $dark-grey;
+        transform: scale(1.0);
+        opacity: 0;
+    }
+} 
+@keyframes like-stroke-animation { /* Like animation 1st part */
+    0% {
+      stroke-dashoffset: 0;
+      
+    }
+    30% {
+      stroke-dashoffset: 1550;
+    }
+    60% {
+      stroke-dashoffset: 3100;
+      fill: transparent;
+      stroke : url(#MyGradient);
+      transform: scale(1);
+    }
+    70% {
+      fill: url(#MyGradient);
+      fill-opacity: 0.25;
+      stroke-opacity: 0.25;
+    }
+    80% {
+      fill: url(#MyGradient);
+      transform: scale(1.1);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      stroke-dashoffset: 3100;
+      fill: url(#MyGradient);
+      stroke : url(#MyGradient)
+    }
+  }
+  /* /Restaurants */
+  
+  @keyframes like-fade-animation { /* Like animation 2nd part */
+    70% {
+      fill: transparent;
+      transform: scale(1);
+    }
+    80% {
+      fill: $secondary-clr;
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+/* padding */
+@mixin padding-section {
+    padding: 30px 30px 30px 30px;
+}
+/* /restaurant */
+$restaurant-info-height : 68% ;
+
