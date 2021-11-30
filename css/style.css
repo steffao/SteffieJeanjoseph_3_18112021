@@ -34,6 +34,7 @@
   font-style: normal;
   font-weight: bold;
 }
+/* Common */
 button, input[type=submit], input[type=reset] {
   background: none;
   color: inherit;
@@ -63,12 +64,163 @@ body.background-color {
 .page {
   max-width: 768px;
   /*Tablet's screenwidth*/
-  min-width: 320px;
+  min-width: 280px;
   background-color: white;
 }
 
 h1 {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+/* Fonts, body, a, hN */
+/* colors */
+/* keyframes*/
+/* /Loader-page */
+@keyframes loaderpage {
+  /*Loading Page opacity*/
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+  75% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: 2;
+  }
+}
+@keyframes move-title {
+  /* Loadspinner title moving down */
+  0% {
+    transform: scale(0.8);
+    color: #FF79DA;
+    padding-top: 0;
+  }
+  50% {
+    transform: scale(0.8);
+    color: #9356DC;
+    padding-top: 0;
+  }
+  100% {
+    transform: scale(1);
+    padding-top: 3em;
+  }
+}
+@keyframes loadspinner {
+  /* Loadspinner circles animation */
+  0% {
+    background-color: #e0e0e0;
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    background-color: #FF79DA;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  75% {
+    background-color: #9356DC;
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    background-color: #e0e0e0;
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes like-stroke-animation {
+  /* Like animation 1st part */
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    stroke: url(#MyGradient);
+    transform: scale(1);
+  }
+  70% {
+    fill: url(#MyGradient);
+    fill-opacity: 0.25;
+    stroke-opacity: 0.25;
+  }
+  80% {
+    fill: url(#MyGradient);
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: url(#MyGradient);
+    stroke: url(#MyGradient);
+  }
+}
+/* /Restaurants */
+@keyframes like-fade-animation {
+  /* Like animation 2nd part */
+  70% {
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: #FF79DA;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+/* padding */
+/* /restaurant */
+/* variables, mixins, functions, keyframes */
+/* loader-spinner */
+.loader-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 768px;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  background-color: white;
+  font-family: "Shrikhand";
+  font-size: 3em;
+  opacity: 0;
+  animation: loaderpage 4s ease;
+}
+.loader-page span {
+  transform: scale(1);
+  max-width: 768px;
+  animation: move-title 4s linear;
+}
+.loader-page .spinners {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+}
+.loader-page .spinners .spinner {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  margin: 2rem;
+  opacity: 0;
+  animation: loadspinner 3s ease-in-out;
 }
 
 /*Header*/
@@ -82,6 +234,35 @@ header .logo {
   padding-bottom: 10px;
 }
 
+/* Footer */
+footer {
+  display: block;
+  padding: 30px 30px 30px 30px;
+  background-color: black;
+  color: white;
+}
+footer h2 {
+  font-family: "Shrikhand";
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+footer li {
+  margin-bottom: 15px;
+}
+footer li a {
+  color: white;
+}
+footer li a i {
+  margin-right: 5px;
+  width: 20px;
+}
+footer li a:hover {
+  text-decoration: underline;
+}
+
+/* BEM reusable , footer, header */
+/* Button components */
+/* variables, mixins, functions, keyframes */
 /* Search */
 .search {
   display: flex;
@@ -94,15 +275,85 @@ header .logo {
   height: 100%;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
-.search .location .fas {
+.search .location__icon {
   width: 33.3%;
   display: flex;
   justify-content: flex-end;
 }
-.search .location span {
-  width: 33.3%;
-  font-weight: norm;
+.search .location__icon .fa-map-marker-alt {
+  padding-right: 1em;
+}
+.search .location__selected {
+  width: 50%;
+  font-weight: normal;
+  display: flex;
+}
+.search .location__selected input {
+  border: none;
+  background: none;
+}
+.search .location__selected input::placeholder {
+  color: black;
+  font-weight: bold;
+  opacity: 1;
+}
+.search .location__selected input:focus-visible {
+  outline-color: #9356DC;
+  background: white;
+  padding: 0.2em;
+}
+.search:hover {
+  font-weight: bold;
+  background-color: #c7c7c7;
+}
+
+/* Toggle search bar */
+#search-bar {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: linear-gradient(0.48turn, #FF79DA, #9356DC);
+  display: none;
+}
+#search-bar .untarget-bar {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  border-right: 1px solid white;
+  color: white;
+}
+#search-bar input {
+  height: 100%;
+  width: 50%;
+  border-radius: 5px;
+  border: none;
+  margin: 0px 10px 0px 10px;
+  padding: 5px 10px 5px 10px;
+  font-weight: normal;
+}
+#search-bar input:focus {
+  display: initial;
+  text-decoration: none;
+  outline: none;
+  font-weight: bold;
+}
+#search-bar .btn-research {
+  display: flex;
+  justify-content: flex-start;
+  width: 25%;
+  color: white;
+  cursor: pointer;
+}
+#search-bar:target {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: 2s;
+}
+#search-bar:not(:target) {
+  display: none;
 }
 
 /*Présentation*/
@@ -124,9 +375,14 @@ header .logo {
 }
 .presentation .btn-explorer {
   padding: 20px 20px;
+  box-shadow: 5px 5px 15px -10px rgba(0, 0, 0, 0.62);
   color: white;
   background: linear-gradient(0.48turn, #FF79DA, #9356DC);
   border-radius: 40px;
+}
+.presentation .btn-explorer:hover {
+  background: linear-gradient(0.48turn, #fface8, #ae80e5);
+  box-shadow: 10px 10px 20px -10px rgba(0, 0, 0, 0.62);
 }
 
 /* Steps */
@@ -175,7 +431,7 @@ header .logo {
   font-weight: 500;
 }
 .steps .step--purple {
-  background-color: #e9d7ff;
+  background-color: #f2eafb;
 }
 
 /* Restaurants*/
@@ -200,11 +456,14 @@ header .logo {
 }
 .restaurants .restaurant__image {
   height: 68%;
+  /* This parameter must be set regarding .restaurant__info height.
+  Mustn't cross 100% in total */
   overflow: hidden;
   position: relative;
 }
 .restaurants .restaurant__image img {
   width: 100%;
+  position: relative;
 }
 .restaurants .restaurant__image .badge-new {
   position: absolute;
@@ -214,7 +473,7 @@ header .logo {
   padding: 0.375rem 0.5rem;
   background-color: #99E2D0;
   border-radius: 3px;
-  color: green;
+  color: #1b6150;
 }
 .restaurants .restaurant__info {
   padding: 10px;
@@ -236,43 +495,35 @@ header .logo {
   font-weight: 300;
   margin: 5px;
 }
-.restaurants .restaurant__info .fa-heart {
-  font-size: 1.8em;
+.restaurants .restaurant__info .icon-like {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 20;
+  cursor: pointer;
   position: absolute;
   right: 25px;
-  transition: border-color 2s, font-weight 2s, transform 2s;
 }
-.restaurants .restaurant__info .fa-heart:hover {
-  font-weight: bold;
-  background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.restaurants .restaurant__info .icon-like svg {
+  overflow: visible;
+  width: 1.8rem;
 }
-
-/* Footer */
-footer {
-  display: block;
-  padding: 30px 30px 30px 30px;
-  background-color: black;
-  color: white;
+.restaurants .restaurant__info .icon-like path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1550;
+  transform-origin: center;
 }
-footer h2 {
-  font-family: "Shrikhand";
-  font-size: 1.2em;
-  margin-bottom: 20px;
+.restaurants .restaurant__info .icon-like .heart-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  stroke: none;
 }
-footer li {
-  margin-bottom: 15px;
+.restaurants .restaurant__info .icon-like .heart-main:hover path {
+  animation: like-stroke-animation 2s ease-in-out forwards;
 }
-footer li a {
-  color: white;
-}
-footer li a i {
-  margin-right: 5px;
-  width: 20px;
-}
-footer li a:hover {
-  text-decoration: underline;
+.restaurants .restaurant__info .icon-like .heart-main:hover ~ .heart-background path {
+  animation: like-fade-animation 2s ease-in-out forwards;
 }
 
 /*# sourceMappingURL=style.css.map */

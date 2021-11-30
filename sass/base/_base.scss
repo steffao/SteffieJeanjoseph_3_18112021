@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Shrikhand';
+    src: url("../fonts/shrikhand/Shrikhand-Regular.ttf");
+    font-style:normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Thin.ttf");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Light.ttf");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Medium.ttf");
+    font-style:normal;
+    font-weight:500;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("../fonts/roboto/Roboto-Bold.ttf");
+    font-style:normal;
+    font-weight:bold;
+}
+
+/* Common */
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);;
+}
+
+body {
+    font-family:  'Roboto',Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 1.0em;
+    display: flex;
+    justify-content: center;
+    &.background-color {
+        background-color: grey;
+    } 
+}
+.page {
+    max-width: 768px;/*Tablet's screenwidth*/
+    min-width: 280px; 
+    background-color: white
+}
+h1 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,46 @@
+/* Button components */
+@mixin corporate-design-btn {
+    padding: 20px 20px;
+    box-shadow: 5px 5px 15px -10px rgb(0 0 0 / 62%);
+    color: white;
+    background: linear-gradient(0.48turn,$secondary-clr,$primary-clr);
+    border-radius: 40px;
+    
+        &:hover {
+            background: linear-gradient(0.48turn, lighten($secondary-clr,10%), lighten($primary-clr,10%));
+            box-shadow: 10px 10px 20px -10px rgb(0 0 0 / 62%);
+        }
+        
+}
+@mixin like-design-animation {
+    fill: transparent;
+stroke: black;
+stroke-width: 20;
+cursor: pointer;
+position: absolute;
+right: 25px;
+    svg {
+    overflow: visible;
+    width: 1.8rem;
+    }
+    path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+    }
+    .heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+    }
+    .heart-main:hover path {
+    animation: like-stroke-animation 2s ease-in-out forwards;
+    }
+
+    .heart-main:hover ~ .heart-background path {
+    animation: like-fade-animation 2s ease-in-out forwards;
+    }
+    
+}
