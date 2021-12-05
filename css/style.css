@@ -227,6 +227,8 @@ h1 {
 header {
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
 }
 header .logo {
   width: 166px;
@@ -263,6 +265,124 @@ footer li a:hover {
 /* BEM reusable , footer, header */
 /* Button components */
 /* variables, mixins, functions, keyframes */
+/* Restaurant A la francaise */
+/*Header layout + home page link(arrow left)*/
+header .return-homepage {
+  position: absolute;
+  align-items: center;
+  left: 0;
+  color: black;
+  padding-left: 0.5em;
+  font-size: 1.5em;
+}
+
+/* Restaurant image */
+.restaurant-presentation {
+  position: relative;
+  padding: 0;
+}
+.restaurant-presentation__image {
+  width: 100%;
+}
+
+/* Menu */
+.restaurant-menu {
+  position: relative;
+  margin-top: -2em;
+  padding: 1.5em 0.5em 1.5em 0.5em;
+  background-color: #F5F5F5;
+  border-radius: 30px 30px 0px 0px;
+}
+.restaurant-menu__title {
+  display: flex;
+  position: relative;
+}
+.restaurant-menu__title h1 {
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+}
+.restaurant-menu__title .icon-like {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 20;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+}
+.restaurant-menu__title .icon-like svg {
+  overflow: visible;
+  width: 1.8rem;
+}
+.restaurant-menu__title .icon-like path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1550;
+  transform-origin: center;
+}
+.restaurant-menu__title .icon-like .heart-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  stroke: none;
+}
+.restaurant-menu__title .icon-like .heart-main:hover path {
+  animation: like-stroke-animation 2s ease-in-out forwards;
+}
+.restaurant-menu__title .icon-like .heart-main:hover ~ .heart-background path {
+  animation: like-fade-animation 2s ease-in-out forwards;
+}
+.restaurant-menu__title .icon-like svg {
+  width: 1.2rem;
+}
+.restaurant-menu__courses {
+  padding: 2em 0em 2em 0em;
+}
+.restaurant-menu__courses h2 {
+  position: relative;
+  margin-bottom: 1em;
+  font-weight: 300;
+  line-height: 0.8em;
+}
+.restaurant-menu__courses h2::after {
+  /*The green bar underlining each h2*/
+  position: absolute;
+  left: 0;
+  top: 1.2em;
+  height: 0;
+  width: 40px;
+  content: "";
+  border-top: 3px solid #99E2D0;
+}
+.restaurant-menu__courses .course {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 5px 3px 15px -10px rgba(0, 0, 0, 0.62);
+}
+.restaurant-menu__courses .course__info {
+  line-height: 1.5em;
+}
+.restaurant-menu__courses .course__info__main {
+  font-weight: bold;
+}
+.restaurant-menu__courses .course__info__side {
+  font-weight: 300;
+  color: grey;
+}
+.restaurant-menu__courses .course__price {
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 1em;
+}
+
+footer {
+  position: relative;
+}
+
+/* Page spécifique aux restaurants */
 /* Search */
 .search {
   display: flex;
