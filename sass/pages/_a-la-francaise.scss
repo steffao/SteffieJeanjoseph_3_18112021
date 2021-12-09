@@ -45,10 +45,11 @@ header{
         }
     }
     &__courses {
-        padding: 2em 0em 2em 0em;
+        padding: 0em 0em 2em 0em;
         h2 {
             position: relative;
-            margin-bottom: 1em;
+            margin-top: 3em;
+            margin-bottom: 1.5em;
             font-weight: 300;
             line-height: .8em;
             &::after { /*The green bar underlining each h2*/
@@ -61,35 +62,138 @@ header{
                 border-top: 3px solid $tertiary-clr;
             }
         }
-        .course {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5em 0.5em 0.5em 0.5em;
+
+
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: 60% 20% 20%;
+            grid-template-rows: 1fr 1fr;
+            column-gap: 20%;
+            position: relative;
             background: white;
             border-radius: 15px;
+            overflow: hidden;
             box-shadow: 5px 3px 15px -10px rgb(0 0 0 / 62%);
+            margin-bottom: 1em;
+            font-size: 1em;
+            animation: unchecked 1s forwards;
+            opacity: 1;
+            transform: translateY(0%);
+            
+            
+            
+              .ellipsis {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            
             &__info {
-                line-height: 1.5em;
-                &__main {
+                padding: 0.5em 0.5em 0.5em 0.5em;
+                
+                &--main {
                     font-weight: bold;
+                    padding: 0.5em 0.5em 0.5em 0.5em;
+                    
+                    grid-column-start: span 2;
+                
+                
                 }
-                &__side {
+                &--side {
+                    grid-row-start: 2;
+                    grid-column-start: 1;
                     font-weight: 300;
+                    font-size: .9em;
                     color: grey;
+                    padding: 0.5em 0.5em 0.5em 0.5em;
+                    
                 }
             }
             &__price {
+                grid-row-start: 2;
+                grid-column-start: 2;
                 font-weight: bold;
                 display: flex;
                 align-items: flex-end;
+                justify-content: flex-end;
+                padding: 0.5em 0.5em 0.5em 0.5em;
                 margin-right: 1em;
+            }
+            &__animation {
+                grid-column-start: 3;
+                grid-row-end: span 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $tertiary-clr;
+                color: white;
+                
+                transform: rotate(0deg);
+                .fa-check-circle {
+                    animation: rotation0 1s forwards;
+                }
+
+            }
+            &:hover {
+                opacity: 1;
+                column-gap: 0%;
+                transform: rotate(360deg);
+                animation: checked 1s forwards;
+                
+                .course-grid__animation {
+                    visibility: visible;
+                    .fa-check-circle {
+                        animation: rotation360 1s forwards;
+                    }
+                }
+                @keyframes checked {
+                    0% {column-gap: 20%;}
+                    100% {column-gap: 0%;}  
+                }
+                @keyframes unchecked {
+                    From {column-gap: 0%;} /*Remove*/
+                    To {column-gap: 20%;}
+                }
+                @keyframes rotation360 {
+                    0% {transform: rotate(0deg);}
+                    100% {transform: rotate(360deg);}
+                    
+                }
+                @keyframes rotation0 {
+                    0% {transform: rotate(360deg);}
+                    100% {transform: rotate(0deg);}
+                }
             }
         }
     }
-    
+    .delivery {
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+        &__btn {
+
+            @include corporate-design-btn();
+        }
+
+    }  
+}
+// .fadeInUp:nth-of-type() {
+//     animation: fadeInUp 1s ease-in-out 0s forwards;
+//     opacity: 1;
+//     transform: translateY(0%);
+// }
+@for $i from 1 to 10 {
+    .fadeInUp:nth-of-type(#{$i}) {
+        animation: fadeInUp 1s ease-in-out #{$i *0.2}s forwards;
+        
+        opacity: 0;
+        transform: translateY(0%);
+    }
 }
 
 
+  
 footer {
     position: relative;
 }

@@ -123,3 +123,15 @@ $light-grey : #F5F5F5;
 /* /restaurant */
 $restaurant-info-height : 68% ;
 
+/* Restaurant page */
+
+@keyframes fadeInUp { /* Fade in Article apparition when the user come on the page */
+  from { 
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
