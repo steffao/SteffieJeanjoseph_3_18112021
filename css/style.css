@@ -593,53 +593,6 @@ footer {
   background-color: #c7c7c7;
 }
 
-/* Toggle search bar */
-#search-bar {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  background: linear-gradient(0.48turn, #FF79DA, #9356DC);
-  display: none;
-}
-#search-bar .untarget-bar {
-  display: flex;
-  justify-content: space-around;
-  width: 25%;
-  border-right: 1px solid white;
-  color: white;
-}
-#search-bar input {
-  height: 100%;
-  width: 50%;
-  border-radius: 5px;
-  border: none;
-  margin: 0px 10px 0px 10px;
-  padding: 5px 10px 5px 10px;
-  font-weight: normal;
-}
-#search-bar input:focus {
-  display: initial;
-  text-decoration: none;
-  outline: none;
-  font-weight: bold;
-}
-#search-bar .btn-research {
-  display: flex;
-  justify-content: flex-start;
-  width: 25%;
-  color: white;
-  cursor: pointer;
-}
-#search-bar:target {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  animation: 2s;
-}
-#search-bar:not(:target) {
-  display: none;
-}
-
 /*Présentation*/
 .presentation {
   display: block;

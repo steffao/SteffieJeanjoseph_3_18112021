@@ -32,33 +32,22 @@
         <header id="slide-up">
             <img class="logo" src="img/images/logo/ohmyfood.png" alt="ohmyfood logo">
         </header>
-        <section class="search">
+        <div class="search">
             <!-- <button type="button" class="location">
                 <a class="location__icon" href="#search-bar"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></a>
                 <a class="location__selected" href="#search-bar">Paris, Belleville</a>
             </button> -->
-                <button type="button" class="location">
+                <div class="location">
                     
                     <div class="location__selected">
                         <a class="location__icon" href="#searchbar"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></a>
                         <input id="searchbar" type="text" placeholder="Paris, Belleville">
                     </div>
                     
-                </button>
+                </div>
         
             
-        </section>
-        <aside>
-            <div id= "search-bar">
-                <a class="untarget-bar" href="#">
-                    <i class="fas fa-times-circle"></i>
-                </a>
-                <input class="bar" type="text" placeholder="Paris, Place de Clichy">
-                <a class="btn-research" >
-                    <i class="fas fa-search"></i>
-                </a>
-            </div>
-        </aside>
+        </div>
         <section class="presentation">
             <h1>Réservez le menu qui vous convient</h1>
             <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
@@ -67,25 +56,26 @@
        <section class="steps">
            <h2>Fonctionnement</h2>
            <ul>
-               <li>
+                <li>
                    <article class="step">
                         <span class="step__number">1</span>
                         <i class="fas fa-mobile-alt step__icon"></i>
-                        <span class="step__name">Choisissez un restaurant</span>
+                        <h3 class="step__name">Choisissez un restaurant</h3>
                    </article>
-               </li>
-               <li>
-                <article class="step">
-                     <span class="step__number">2</span>
-                     <i class="fas fa-list-ul step__icon"></i>
-                     <span class="step__name">Composez votre menu</span>
-                </article>
                 </li>
-                <article class="step step--purple">
-                     <span class="step__number">3</span>
-                     <i class="fas fa-store step__icon step__icon--purple"></i>
-                     <span class="step__name">Dégustez au restaurant</span>
-                </article>
+                <li>
+                    <article class="step">
+                        <span class="step__number">2</span>
+                        <i class="fas fa-list-ul step__icon"></i>
+                        <h3 class="step__name">Composez votre menu</h3>
+                    </article>
+                </li>
+                <li>
+                    <article class="step step--purple">
+                        <span class="step__number">3</span>
+                        <i class="fas fa-store step__icon step__icon--purple"></i>
+                        <h3 class="step__name">Dégustez au restaurant</h3>
+                    </article>
                 </li>
            </ul>
        </section>
@@ -101,10 +91,10 @@
                         <h3>La palette du goût</h3>
                         <span>Ménilmontant</span>
                         <div class="icon-like">
-                            <svg class="heart-main" viewBox="0 0 512 512" width="100" title="heart">
+                            <svg class="heart-main" viewBox="0 0 512 512" width="100">
                               <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                             </svg>
-                            <svg class="heart-background" viewBox="0 0 512 512" width="100" title="heart">
+                            <svg class="heart-background" viewBox="0 0 512 512" width="100">
                                 <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                                 <defs>
                                     <linearGradient id="MyGradient" x1="30%" y1="0%" x2="0%" y2="100%">
@@ -127,13 +117,13 @@
                         <h3>La note enchantée</h3>
                         <span>Charonne</span>
                         <div class="icon-like">
-                            <svg class="heart-main" viewBox="0 0 512 512" width="100" title="heart">
+                            <svg class="heart-main" viewBox="0 0 512 512" width="100" >
                               <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                             </svg>
-                            <svg class="heart-background" viewBox="0 0 512 512" width="100" title="heart">
+                            <svg class="heart-background" viewBox="0 0 512 512" width="100" >
                                 <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                                 <defs>
-                                    <linearGradient id="MyGradient" x1="30%" y1="0%" x2="0%" y2="100%">
+                                    <linearGradient x1="30%" y1="0%" x2="0%" y2="100%">
                                         <stop offset="0%" style="stop-color:#9356DC;stop-opacity:1" />
                                         <stop offset="100%" style="stop-color:#FF79DA;stop-opacity:1" />
                                     </linearGradient>
@@ -153,13 +143,13 @@
                         <h3>À la française</h3>
                         <span>Cité Rouge</span>
                         <div class="icon-like">
-                            <svg class="heart-main" viewBox="0 0 512 512" width="100" title="heart">
+                            <svg class="heart-main" viewBox="0 0 512 512" width="100" >
                               <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                             </svg>
-                            <svg class="heart-background" viewBox="0 0 512 512" width="100" title="heart">
+                            <svg class="heart-background" viewBox="0 0 512 512" width="100" >
                                 <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                                 <defs>
-                                    <linearGradient id="MyGradient" x1="30%" y1="0%" x2="0%" y2="100%">
+                                    <linearGradient x1="30%" y1="0%" x2="0%" y2="100%">
                                         <stop offset="0%" style="stop-color:#9356DC;stop-opacity:1" />
                                         <stop offset="100%" style="stop-color:#FF79DA;stop-opacity:1" />
                                     </linearGradient>
@@ -179,13 +169,13 @@
                         <h3>Le délice des sens</h3>
                         <span>Folie-Méricourt</span>
                         <div class="icon-like">
-                            <svg class="heart-main" viewBox="0 0 512 512" width="100" title="heart">
+                            <svg class="heart-main" viewBox="0 0 512 512" width="100"  >
                               <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                             </svg>
-                            <svg class="heart-background" viewBox="0 0 512 512" width="100" title="heart">
+                            <svg class="heart-background" viewBox="0 0 512 512" width="100"  >
                                 <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
                                 <defs>
-                                    <linearGradient id="MyGradient" x1="30%" y1="0%" x2="0%" y2="100%">
+                                    <linearGradient x1="30%" y1="0%" x2="0%" y2="100%">
                                         <stop offset="0%" style="stop-color:#9356DC;stop-opacity:1" />
                                         <stop offset="100%" style="stop-color:#FF79DA;stop-opacity:1" />
                                     </linearGradient>

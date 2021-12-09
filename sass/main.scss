@@ -52,54 +52,7 @@
         background-color: darken($dark-grey,10%);
     }
 }
-/* Toggle search bar */
-#search-bar{
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box ;
-    background: linear-gradient(0.48turn,$secondary-clr,$primary-clr);
-    display: none;
-    .untarget-bar {
-        display: flex;
-        justify-content: space-around;
-        width: 25%;
-        border-right: 1px solid white;
-        color: white;
-    }
-    input {
-        height: 100%;
-        width: 50%;
-        border-radius: 5px;
-        border: none;
-        margin: 0px 10px 0px 10px;
-        padding: 5px 10px 5px 10px;
-        font-weight: normal;
-        &:focus{
-            display: initial;
-            text-decoration: none;
-            outline: none ;
-            font-weight: bold;
-        }
-    }
-    .btn-research {
-        display: flex;
-        justify-content: flex-start;
-        width: 25%;
-        color: white;
-        cursor: pointer;
-    }   
-
-    &:target {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        animation : 2s
-    }
-    &:not(:target) {
-        display: none;
-    }      
-    
-}  
+ 
 
 /*Présentation*/
 .presentation {
