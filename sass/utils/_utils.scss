@@ -135,3 +135,28 @@ $restaurant-info-height : 68% ;
     transform: translateY(0%);
   }
 }
+@keyframes checked {
+  0% {
+      transform: translateX(0%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }  
+}
+@keyframes unchecked {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0%);
+  }  
+}
+@keyframes rotation360 {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+  
+}
+@keyframes rotation0 {
+  0% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
