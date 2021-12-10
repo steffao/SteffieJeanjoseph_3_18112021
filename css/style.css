@@ -197,6 +197,38 @@ h1 {
     transform: translateY(0%);
   }
 }
+@keyframes checked {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes unchecked {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes rotation360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation0 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 /* variables, mixins, functions, keyframes */
 /* loader-spinner */
 .loader-page {
@@ -368,9 +400,9 @@ header .return-homepage {
 }
 .restaurant-menu__courses .course-grid {
   display: grid;
-  grid-template-columns: 60% 20% 20%;
+  grid-template-columns: 80% 20% 20%;
   grid-template-rows: 1fr 1fr;
-  column-gap: 20%;
+  column-gap: 0%;
   position: relative;
   background: white;
   border-radius: 15px;
@@ -394,6 +426,7 @@ header .return-homepage {
   font-weight: bold;
   padding: 0.5em 0.5em 0.5em 0.5em;
   grid-column-start: span 2;
+  width: 100%;
 }
 .restaurant-menu__courses .course-grid__info--side {
   grid-row-start: 2;
@@ -402,16 +435,19 @@ header .return-homepage {
   font-size: 0.9em;
   color: grey;
   padding: 0.5em 0.5em 0.5em 0.5em;
+  width: 100%;
 }
 .restaurant-menu__courses .course-grid__price {
   grid-row-start: 2;
   grid-column-start: 2;
+  background-color: white;
   font-weight: bold;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   padding: 0.5em 0.5em 0.5em 0.5em;
   margin-right: 1em;
+  animation: unchecked 1s forwards;
 }
 .restaurant-menu__courses .course-grid__animation {
   grid-column-start: 3;
@@ -421,6 +457,7 @@ header .return-homepage {
   justify-content: center;
   background-color: #99E2D0;
   color: white;
+  animation: unchecked 1s forwards;
   transform: rotate(0deg);
 }
 .restaurant-menu__courses .course-grid__animation .fa-check-circle {
@@ -430,46 +467,32 @@ header .return-homepage {
   opacity: 1;
   column-gap: 0%;
   transform: rotate(360deg);
+}
+.restaurant-menu__courses .course-grid:hover .course-grid__info--main {
+  width: 80%;
+  /*width property override the width defined 
+  into the grid-template-coluumns*/
+  transition: width 1s ease-in-out;
+  /*Simultaneous with checked animations*/
+}
+.restaurant-menu__courses .course-grid:hover .course-grid__info--side {
+  width: 80%;
+  /*width property override the width defined 
+  into the grid-template-coluumns*/
+  transition: width 1s ease-in-out;
+  /*Simultaneous with checked animations*/
+}
+.restaurant-menu__courses .course-grid:hover .course-grid__price {
+  transform: translateX(0%);
   animation: checked 1s forwards;
 }
 .restaurant-menu__courses .course-grid:hover .course-grid__animation {
   visibility: visible;
+  transform: translateX(0%);
+  animation: checked 1s forwards;
 }
 .restaurant-menu__courses .course-grid:hover .course-grid__animation .fa-check-circle {
   animation: rotation360 1s forwards;
-}
-@keyframes checked {
-  0% {
-    column-gap: 20%;
-  }
-  100% {
-    column-gap: 0%;
-  }
-}
-@keyframes unchecked {
-  from {
-    column-gap: 0%;
-  }
-  /*Remove*/
-  to {
-    column-gap: 20%;
-  }
-}
-@keyframes rotation360 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotation0 {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
 .restaurant-menu .delivery {
   display: flex;

@@ -67,9 +67,9 @@ header{
 
         .course-grid {
             display: grid;
-            grid-template-columns: 60% 20% 20%;
+            grid-template-columns: 80% 20% 20%;
             grid-template-rows: 1fr 1fr;
-            column-gap: 20%;
+            column-gap: 0%;
             position: relative;
             background: white;
             border-radius: 15px;
@@ -95,8 +95,8 @@ header{
                 &--main {
                     font-weight: bold;
                     padding: 0.5em 0.5em 0.5em 0.5em;
-                    
                     grid-column-start: span 2;
+                    width: 100%;
                 
                 
                 }
@@ -107,18 +107,21 @@ header{
                     font-size: .9em;
                     color: grey;
                     padding: 0.5em 0.5em 0.5em 0.5em;
-                    
+                    width: 100%;
+
                 }
             }
             &__price {
                 grid-row-start: 2;
                 grid-column-start: 2;
+                background-color: white;
                 font-weight: bold;
                 display: flex;
                 align-items: flex-end;
                 justify-content: flex-end;
                 padding: 0.5em 0.5em 0.5em 0.5em;
                 margin-right: 1em;
+                animation: unchecked 1s forwards;
             }
             &__animation {
                 grid-column-start: 3;
@@ -128,7 +131,7 @@ header{
                 justify-content: center;
                 background-color: $tertiary-clr;
                 color: white;
-                
+                animation: unchecked 1s forwards;
                 transform: rotate(0deg);
                 .fa-check-circle {
                     animation: rotation0 1s forwards;
@@ -139,31 +142,35 @@ header{
                 opacity: 1;
                 column-gap: 0%;
                 transform: rotate(360deg);
-                animation: checked 1s forwards;
+
+                .course-grid__info {
+                    &--main {
+                        width: 80%; /*width property override the width defined 
+                    into the grid-template-coluumns*/
+                    transition: width 1s ease-in-out; /*Simultaneous with checked animations*/
+                    }
+                    
+                    &--side {
+                    width: 80%; /*width property override the width defined 
+                    into the grid-template-coluumns*/
+                    transition: width 1s ease-in-out; /*Simultaneous with checked animations*/
+                    }
+                }
                 
+                .course-grid__price {
+                    transform: translateX(0%);
+                    animation: checked 1s forwards;
+
+                }                
                 .course-grid__animation {
                     visibility: visible;
+                    transform: translateX(0%);
+                    animation: checked 1s forwards;
                     .fa-check-circle {
                         animation: rotation360 1s forwards;
                     }
                 }
-                @keyframes checked {
-                    0% {column-gap: 20%;}
-                    100% {column-gap: 0%;}  
-                }
-                @keyframes unchecked {
-                    From {column-gap: 0%;} /*Remove*/
-                    To {column-gap: 20%;}
-                }
-                @keyframes rotation360 {
-                    0% {transform: rotate(0deg);}
-                    100% {transform: rotate(360deg);}
-                    
-                }
-                @keyframes rotation0 {
-                    0% {transform: rotate(360deg);}
-                    100% {transform: rotate(0deg);}
-                }
+                
             }
         }
     }
