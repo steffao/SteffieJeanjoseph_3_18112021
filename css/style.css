@@ -74,6 +74,7 @@ h1 {
 
 /* Fonts, body, a, hN */
 /* colors */
+/* HOMEPAGE */
 /* keyframes*/
 /* /Loader-page */
 @keyframes loaderpage {
@@ -185,7 +186,80 @@ h1 {
 }
 /* padding */
 /* /restaurant */
-/* Restaurant page */
+/* RESTAURANT PAGES */
+/* / Menu fadeIn animation*/
+/* Delay between every article within animation property 
+0.2s*/
+.fadeInUp:nth-of-type(1) {
+  animation: fadeInUp 1s ease-in-out 0.2s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
+/* Delay between every article within animation property 
+0.4s*/
+.fadeInUp:nth-of-type(2) {
+  animation: fadeInUp 1s ease-in-out 0.4s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
+/* Delay between every article within animation property 
+0.6s*/
+.fadeInUp:nth-of-type(3) {
+  animation: fadeInUp 1s ease-in-out 0.6s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
+/* Delay between every article within animation property 
+0.8s*/
+.fadeInUp:nth-of-type(4) {
+  animation: fadeInUp 1s ease-in-out 0.8s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
+/* Delay between every article within animation property 
+1s*/
+.fadeInUp:nth-of-type(5) {
+  animation: fadeInUp 1s ease-in-out 1s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
+/* Delay between every article within animation property 
+1.2s*/
+.fadeInUp:nth-of-type(6) {
+  animation: fadeInUp 1s ease-in-out 1.2s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
+/* Delay between every article within animation property 
+1.4s*/
+.fadeInUp:nth-of-type(7) {
+  animation: fadeInUp 1s ease-in-out 1.4s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
+/* Delay between every article within animation property 
+1.6s*/
+.fadeInUp:nth-of-type(8) {
+  animation: fadeInUp 1s ease-in-out 1.6s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
+/* Delay between every article within animation property 
+1.8s*/
+.fadeInUp:nth-of-type(9) {
+  animation: fadeInUp 1s ease-in-out 1.8s forwards;
+  opacity: 0;
+  transform: translateY(0%);
+}
+
 @keyframes fadeInUp {
   /* Fade in Article apparition when the user come on the page */
   from {
@@ -197,20 +271,13 @@ h1 {
     transform: translateY(0%);
   }
 }
+/* / Curse hover in and hover out animation */
 @keyframes checked {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(-100%);
-  }
-}
-@keyframes unchecked {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
   }
 }
 @keyframes rotation360 {
@@ -229,6 +296,7 @@ h1 {
     transform: rotate(0deg);
   }
 }
+/* / Map*/
 /* variables, mixins, functions, keyframes */
 /* loader-spinner */
 .loader-page {
@@ -309,7 +377,7 @@ footer li a:hover {
 /* BEM reusable , footer, header */
 /* Button components */
 /* variables, mixins, functions, keyframes */
-/* Restaurant A la francaise */
+/* Restaurants */
 /*Header layout + home page link(arrow left)*/
 header .return-homepage {
   position: absolute;
@@ -324,9 +392,23 @@ header .return-homepage {
 .restaurant-presentation {
   position: relative;
   padding: 0;
+  height: 220px;
+  overflow: hidden;
 }
 .restaurant-presentation__image {
   width: 100%;
+}
+.restaurant-presentation__image[alt="Picture of La note enchantée"] {
+  transform: translateY(-100px);
+}
+.restaurant-presentation__image[alt="Picture of Le délice des sens"] {
+  transform: translateY(-38px);
+}
+.restaurant-presentation__image[alt="Picture of À la française"] {
+  transform: translateY(0px);
+}
+.restaurant-presentation__image[alt="Picture of La palette du goût"] {
+  transform: translateY(0px);
 }
 
 /* Menu */
@@ -410,7 +492,6 @@ header .return-homepage {
   box-shadow: 5px 3px 15px -10px rgba(0, 0, 0, 0.62);
   margin-bottom: 1em;
   font-size: 1em;
-  animation: unchecked 1s forwards;
   opacity: 1;
   transform: translateY(0%);
 }
@@ -418,9 +499,6 @@ header .return-homepage {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-.restaurant-menu__courses .course-grid__info {
-  padding: 0.5em 0.5em 0.5em 0.5em;
 }
 .restaurant-menu__courses .course-grid__info--main {
   font-weight: bold;
@@ -445,9 +523,10 @@ header .return-homepage {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  padding: 0.5em 0.5em 0.5em 0.5em;
+  padding: 0.5em 0.5em 0.5em 0em;
   margin-right: 1em;
-  animation: unchecked 1s forwards;
+  transform: translateX(0%);
+  transition: all 1s;
 }
 .restaurant-menu__courses .course-grid__animation {
   grid-column-start: 3;
@@ -457,8 +536,11 @@ header .return-homepage {
   justify-content: center;
   background-color: #99E2D0;
   color: white;
-  animation: unchecked 1s forwards;
+  animation: all 1s forwards;
   transform: rotate(0deg);
+  transform: translateX(0%);
+  width: 0%;
+  transition: all 1s;
 }
 .restaurant-menu__courses .course-grid__animation .fa-check-circle {
   animation: rotation0 1s forwards;
@@ -483,13 +565,14 @@ header .return-homepage {
   /*Simultaneous with checked animations*/
 }
 .restaurant-menu__courses .course-grid:hover .course-grid__price {
-  transform: translateX(0%);
-  animation: checked 1s forwards;
+  transform: translateX(-100%);
+  transition: all 1s ease-in-out;
 }
 .restaurant-menu__courses .course-grid:hover .course-grid__animation {
   visibility: visible;
-  transform: translateX(0%);
-  animation: checked 1s forwards;
+  transform: translateX(-100%);
+  width: 100%;
+  transition: all 1s ease-in-out;
 }
 .restaurant-menu__courses .course-grid:hover .course-grid__animation .fa-check-circle {
   animation: rotation360 1s forwards;
@@ -511,64 +594,17 @@ header .return-homepage {
   box-shadow: 10px 10px 20px -10px rgba(0, 0, 0, 0.62);
 }
 
-.fadeInUp:nth-of-type(1) {
-  animation: fadeInUp 1s ease-in-out 0.2s forwards;
-  opacity: 0;
-  transform: translateY(0%);
+/* Media queries */
+@media (max-width: 320px) {
+  .restaurant-menu__title h1 {
+    font-size: 1.3em;
+  }
 }
-
-.fadeInUp:nth-of-type(2) {
-  animation: fadeInUp 1s ease-in-out 0.4s forwards;
-  opacity: 0;
-  transform: translateY(0%);
+@media (min-width: 500px) {
+  .restaurant-presentation {
+    height: 300px;
+  }
 }
-
-.fadeInUp:nth-of-type(3) {
-  animation: fadeInUp 1s ease-in-out 0.6s forwards;
-  opacity: 0;
-  transform: translateY(0%);
-}
-
-.fadeInUp:nth-of-type(4) {
-  animation: fadeInUp 1s ease-in-out 0.8s forwards;
-  opacity: 0;
-  transform: translateY(0%);
-}
-
-.fadeInUp:nth-of-type(5) {
-  animation: fadeInUp 1s ease-in-out 1s forwards;
-  opacity: 0;
-  transform: translateY(0%);
-}
-
-.fadeInUp:nth-of-type(6) {
-  animation: fadeInUp 1s ease-in-out 1.2s forwards;
-  opacity: 0;
-  transform: translateY(0%);
-}
-
-.fadeInUp:nth-of-type(7) {
-  animation: fadeInUp 1s ease-in-out 1.4s forwards;
-  opacity: 0;
-  transform: translateY(0%);
-}
-
-.fadeInUp:nth-of-type(8) {
-  animation: fadeInUp 1s ease-in-out 1.6s forwards;
-  opacity: 0;
-  transform: translateY(0%);
-}
-
-.fadeInUp:nth-of-type(9) {
-  animation: fadeInUp 1s ease-in-out 1.8s forwards;
-  opacity: 0;
-  transform: translateY(0%);
-}
-
-footer {
-  position: relative;
-}
-
 /* Page spécifique aux restaurants */
 /* Search */
 .search {
@@ -723,6 +759,8 @@ footer {
 }
 .restaurants .restaurant__image img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: relative;
 }
 .restaurants .restaurant__image .badge-new {
@@ -784,6 +822,13 @@ footer {
 }
 .restaurants .restaurant__info .icon-like .heart-main:hover ~ .heart-background path {
   animation: like-fade-animation 2s ease-in-out forwards;
+}
+
+@media (min-width: 500px) {
+  .restaurant .restaurant__image img {
+    height: unset;
+    object-fit: cover;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
