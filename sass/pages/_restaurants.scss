@@ -1,4 +1,4 @@
-/* Restaurant A la francaise */
+/* Restaurants */
 
 
 /*Header layout + home page link(arrow left)*/
@@ -17,9 +17,16 @@ header{
 .restaurant-presentation {
     position: relative;
     padding: 0;
+    height: 220px;
+    overflow: hidden;
     
     &__image {
         width: 100%;
+        @each $name, $val in $img-translate {
+            &[alt="Picture of #{$name}"] {
+                transform:translateY(#{$val}px)
+            } 
+        }
     }
 }
 
@@ -76,29 +83,20 @@ header{
             overflow: hidden;
             box-shadow: 5px 3px 15px -10px rgb(0 0 0 / 62%);
             margin-bottom: 1em;
-            font-size: 1em;
-            animation: unchecked 1s forwards;
+            font-size: 1em;            
             opacity: 1;
             transform: translateY(0%);
-            
-            
-            
-              .ellipsis {
+            .ellipsis {
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
             }
-            
-            &__info {
-                padding: 0.5em 0.5em 0.5em 0.5em;
-                
+            &__info {  
                 &--main {
                     font-weight: bold;
                     padding: 0.5em 0.5em 0.5em 0.5em;
                     grid-column-start: span 2;
                     width: 100%;
-                
-                
                 }
                 &--side {
                     grid-row-start: 2;
@@ -119,9 +117,10 @@ header{
                 display: flex;
                 align-items: flex-end;
                 justify-content: flex-end;
-                padding: 0.5em 0.5em 0.5em 0.5em;
+                padding: 0.5em 0.5em 0.5em 0em;
                 margin-right: 1em;
-                animation: unchecked 1s forwards;
+                transform:translateX(0%);
+                transition: all 1s;
             }
             &__animation {
                 grid-column-start: 3;
@@ -131,8 +130,11 @@ header{
                 justify-content: center;
                 background-color: $tertiary-clr;
                 color: white;
-                animation: unchecked 1s forwards;
+                animation: all 1s forwards;
                 transform: rotate(0deg);
+                transform:translateX(0%);
+                width: 0%;
+                transition: all 1s;
                 .fa-check-circle {
                     animation: rotation0 1s forwards;
                 }
@@ -158,14 +160,18 @@ header{
                 }
                 
                 .course-grid__price {
-                    transform: translateX(0%);
-                    animation: checked 1s forwards;
+                    transform: translateX(-100%);
+                    transition: all 1s ease-in-out;
+                    // animation: checked 1s forwards;
 
                 }                
                 .course-grid__animation {
                     visibility: visible;
-                    transform: translateX(0%);
-                    animation: checked 1s forwards;
+                    transform: translateX(-100%);
+                    width: 100%;
+                    transition: all 1s ease-in-out;
+                    // animation: checked 1s forwards;
+                    
                     .fa-check-circle {
                         animation: rotation360 1s forwards;
                     }
@@ -179,28 +185,21 @@ header{
         justify-content: center;
         margin-top: 2em;
         &__btn {
-
             @include corporate-design-btn();
         }
 
     }  
 }
-// .fadeInUp:nth-of-type() {
-//     animation: fadeInUp 1s ease-in-out 0s forwards;
-//     opacity: 1;
-//     transform: translateY(0%);
-// }
-@for $i from 1 to 10 {
-    .fadeInUp:nth-of-type(#{$i}) {
-        animation: fadeInUp 1s ease-in-out #{$i *0.2}s forwards;
-        
-        opacity: 0;
-        transform: translateY(0%);
-    }
+
+/* Media queries */ 
+
+@media (max-width: 320px) {
+    .restaurant-menu__title h1 {
+        font-size: 1.3em;
+    } 
 }
-
-
-  
-footer {
-    position: relative;
+@media (min-width: 500px) {
+    .restaurant-presentation {
+        height: 300px;
+    } 
 }

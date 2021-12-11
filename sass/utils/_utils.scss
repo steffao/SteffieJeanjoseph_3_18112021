@@ -5,6 +5,7 @@ $tertiary-clr : #99E2D0;
 $dark-grey :  #e0e0e0;
 $light-grey : #F5F5F5;
 
+/* HOMEPAGE */
 /* keyframes*/
 /* /Loader-page */
 @keyframes loaderpage { /*Loading Page opacity*/
@@ -123,8 +124,16 @@ $light-grey : #F5F5F5;
 /* /restaurant */
 $restaurant-info-height : 68% ;
 
-/* Restaurant page */
-
+/* RESTAURANT PAGES */
+/* / Menu fadeIn animation*/
+@for $i from 1 to 10 { /* Delay between every article within animation property 
+  #{$i *0.2}s*/
+  .fadeInUp:nth-of-type(#{$i}) {
+      animation: fadeInUp 1s ease-in-out #{$i *0.2}s forwards;
+      opacity: 0;
+      transform: translateY(0%);
+  }
+}
 @keyframes fadeInUp { /* Fade in Article apparition when the user come on the page */
   from { 
     opacity: 0;
@@ -135,6 +144,7 @@ $restaurant-info-height : 68% ;
     transform: translateY(0%);
   }
 }
+/* / Curse hover in and hover out animation */
 @keyframes checked {
   0% {
       transform: translateX(0%);
@@ -143,14 +153,7 @@ $restaurant-info-height : 68% ;
       transform: translateX(-100%);
   }  
 }
-@keyframes unchecked {
-  0% {
-      transform: translateX(-100%);
-  }
-  100% {
-      transform: translateX(0%);
-  }  
-}
+
 @keyframes rotation360 {
   0% {transform: rotate(0deg);}
   100% {transform: rotate(360deg);}
@@ -160,3 +163,10 @@ $restaurant-info-height : 68% ;
   0% {transform: rotate(360deg);}
   100% {transform: rotate(0deg);}
 }
+/* / Map*/
+$img-translate :( /*Set up the restaurant page images with translateY */
+    La note enchantée: -100,
+    Le délice des sens: -38,
+    À la française: 0,
+    La palette du goût:0
+);
